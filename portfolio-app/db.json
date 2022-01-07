@@ -1,0 +1,78 @@
+{
+    "Acerca":
+        {
+            "nombre": "D.",
+            "apellido": "Wade",
+            "profesion": "Sacacorcho Profesional",
+            "about": "Suelo sacar a pasear al perro es algo que me encanta"
+        },
+    "Experiencias":[
+        {
+            "id": 1,
+            "title": " Laburando Durlok",
+            "descripcion": "Y...movía un par de movidas"
+        },
+        {
+            "id": 2,
+            "title": "Cosechando alfajores",
+            "descripcion": "Tenía que regar los alfaroes hasta que crezcan"
+        },
+        {
+            "id": 3,
+            "title": "Limpiaba polishas",
+            "descripcion": "Tenía que limpiar las polishas para ke no esten sucias"
+        }
+    ],
+    "Educaciones":[
+        {
+            "id":1,
+            "title": "Anexo papá",
+            "descripcion": "Miraba series"
+        },
+        {
+            "id":2,
+            "title": "Mariano Fragueiro",
+            "descripcion": "Miraba los simuladores"
+        },
+        {
+            "id":3,
+            "title":"Famafinho",
+            "descripcion": "se acabó lo ke se daba"
+        }
+    ],
+    "Skills":[
+        {
+            "id":1,
+            "title": "CSS",
+            "progreso": 30
+        },
+        {
+            "id":2,
+            "title":"html",
+            "progreso": 80
+        },
+        {
+            "id":3,
+            "title":"java",
+            "progreso":20
+        }
+    ],
+    "Proyectos":[
+        {
+            "id":1,
+            "title": "Portfolio",
+            "descripcion": "La creación de un portfolio web"
+        },
+        {
+            "id":2,
+            "title": "Trello",
+            "descripcion": "La creación de un tablero administrador de tareas Trello"
+        },
+        {
+            "id":3,
+            "title":"Porfolio para Arg Programa",
+            "descripcion": "Otro portfolio pero ahora para Arg Programa"
+        }
+    ]
+
+}

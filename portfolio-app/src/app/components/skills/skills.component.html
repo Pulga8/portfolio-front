@@ -145,26 +145,13 @@
     <div class="container">
         <h5>Skills</h5>
         <div class="row d-flex justify-content-center mt-50">
-            <div class="col-md-6">
-                <div class="progress yellow"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
-                    <div class="progress-value">37.5%</div>
+            <div *ngFor ="let skill of skills" class="col-md-6">
+                <div class="progress blue"> 
+                    <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
+                    <div class="progress-value">{{skill.progreso}}</div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="progress blue"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
-                    <div class="progress-value">90%</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="progress blue"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
-                    <div class="progress-value">90%</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="progress blue"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
-                    <div class="progress-value">90%</div>
-                </div>
-            </div>
+            <!-- Si el progreso es menor al 45% cambiar el color a amarillo -->
         </div>
     </div>
 </div>
