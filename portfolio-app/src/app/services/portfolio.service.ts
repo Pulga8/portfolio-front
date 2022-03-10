@@ -18,11 +18,16 @@ export class PortfolioService {
   private apiUrl_ski = 'http://localhost:5000/Skills'
   private apiUrl_pro = 'http://localhost:5000/Proyectos'
 
+  url:string="http://localhost:5000/"
   
   constructor(
     private http:HttpClient
   ) { }
   
+  // getData():Observable<any>{
+  //   return this.http.get<any>(this.url+"Acerca")
+  // }
+
   /* Devuelve las experiencias del archivo db.json en una lista */
   getExpe():Observable<Experiencia[]>{
     return this.http.get<Experiencia[]>(this.apiUrl_expe)
@@ -38,9 +43,9 @@ export class PortfolioService {
   }
 
   /* Devuelve el Acerca de del archivo db.json en una lista */
-  // getAce():Observable<Acerca>{
-  //   return this.http.get<Acerca>(this.apiUrl_ace)
-  // }
+  getAce():Observable<Acerca[]>{
+    return this.http.get<Acerca[]>(this.apiUrl_ace)
+  }
 
   /* Devuelve los skills del archivo db.json en una lista */
   getSkill():Observable<Skill[]>{

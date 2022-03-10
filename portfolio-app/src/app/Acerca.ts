@@ -1,6 +1,6 @@
 export interface Acerca{
     nombre: String,
     apellido: String,
-    profesión: String,
+    profesion: String,
     about: String
 }

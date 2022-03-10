@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
 import { Experiencia } from 'src/app/Experiencia';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-experience',
@@ -16,10 +16,9 @@ export class ExperienceComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // Escuchamos al método get expe, promesas.
-    this.experienciaService.getExpe().subscribe((experiencias)=>[
-      this.experiencias = experiencias
-    ]);
+    this.experienciaService.getExpe().subscribe(data=>{
+      this.experiencias = data;
+    })
   }
 
 }
