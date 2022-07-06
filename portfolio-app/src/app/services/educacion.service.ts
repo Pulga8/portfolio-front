@@ -8,12 +8,11 @@ import { Educacion } from '../model/Educacion';
 })
 export class EducacionService {
 
-  URL = 'http://localhost:8080/educacion/traer'; 
-  //URL = 'http://localhost:5000/Educaciones';
+  URL = 'http://localhost:8080/educacion/traer';
 
   constructor(private http: HttpClient) { }
 
-  public getEducacion():Observable<Educacion[]>{
+  public getEducacion(): Observable<Educacion[]> {
     return this.http.get<Educacion[]>(this.URL);
   }
 }

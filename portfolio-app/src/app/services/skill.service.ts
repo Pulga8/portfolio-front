@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Persona } from '../model/Persona';
+import { Skill } from '../model/Skill';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PersonaService {
-
-  URL = 'http://localhost:8080/persona/traer';
+export class SkillService {
+  
+  URL = 'http://localhost:8080/skill/traer';
 
   constructor(private http: HttpClient) { }
 
-  public getPersona(): Observable<Persona[]> {
-    return this.http.get<Persona[]>(this.URL);
+  public getSkill(): Observable<Skill[]> {
+    return this.http.get<Skill[]>(this.URL);
   }
 }

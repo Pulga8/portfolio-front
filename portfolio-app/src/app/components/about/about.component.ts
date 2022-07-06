@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/model/Persona';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
   selector: 'app-about',
@@ -12,11 +12,11 @@ export class AboutComponent implements OnInit {
   persona: Persona[] = [];
 
   constructor(
-    private personaServices:PortfolioService
+    private personaServices: PersonaService
   ) { }
 
   ngOnInit(): void {
-    this.personaServices.getAce().subscribe(data=>{
+    this.personaServices.getPersona().subscribe((data) => {
       this.persona = data;
     })
   }
