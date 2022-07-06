@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Experiencia } from 'src/app/Experiencia';
+import { Experiencia } from 'src/app/model/Experiencia';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({

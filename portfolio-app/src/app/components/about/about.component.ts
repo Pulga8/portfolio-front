@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Acerca } from 'src/app/Acerca';
+import { Persona } from 'src/app/model/Persona';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -9,15 +9,15 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class AboutComponent implements OnInit {
 
-  acerca: Acerca[] = [];
+  persona: Persona[] = [];
 
   constructor(
-    private acercaServices:PortfolioService
+    private personaServices:PortfolioService
   ) { }
 
   ngOnInit(): void {
-    this.acercaServices.getAce().subscribe(data=>{
-      this.acerca = data;
+    this.personaServices.getAce().subscribe(data=>{
+      this.persona = data;
     })
   }
 
