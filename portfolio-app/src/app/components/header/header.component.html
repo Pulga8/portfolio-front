@@ -8,6 +8,10 @@
   .btn{
     border-color: white;
   }
+  div.logo > img:nth-child(1) {
+    width: 100%;
+  }
+
 </style>
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
@@ -38,12 +42,12 @@
             </a>
           </li>
         </ul>
-        <button class="btn btn-outline-light" type="submit">Log Out</button>
+        <button class="btn btn-outline-light" (click)="login()" type="submit">Log In</button>
       </div>
     </div>
   </nav>
   <div class="logo">
       <!-- Acá es donde debería reemplazar el link por {{imagen}} que va a cambiar depende la que elija -->
       <!-- https://cortomaltese.com/es/wp-content/uploads/sites/10/cortomaltese-home-slider-1.jpg -->
-      <img class="rounded" width="1840" height="514" src="../../../assets/cortomaltese-home-slider-1.jpg" alt="">
+      <img class="rounded" height="514" src="../../../assets/cortomaltese-home-slider-1.jpg" alt="">
   </div>

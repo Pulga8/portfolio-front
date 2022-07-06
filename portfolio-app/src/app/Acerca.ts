@@ -1,4 +1,4 @@
-export interface Acerca{
+export interface Acerca {
     nombre: String,
     apellido: String,
     profesion: String,

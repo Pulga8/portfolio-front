@@ -4,9 +4,11 @@ import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 const routes: Routes = [
-  {path:'portfolio',component:PortfolioComponent},
-  {path:'login', component: LoginComponent},
-  {path:'',redirectTo:'login', pathMatch:'full'}
+  // Agregar el canActivate hace que no pueda ver la pág
+  { path: 'portfolio', component: PortfolioComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', component: PortfolioComponent },
+  //{ path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 
 @NgModule({

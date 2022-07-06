@@ -61,6 +61,13 @@ sudo apt-get install -y nodejs
 node -v
 ```
 
+**Uninstall something of apt packages**
+
+```sh
+# Uninstall name-of-packages.
+sudo apt remove name-of-packages
+
+```
 
 ### Create a project with angular
 
@@ -108,3 +115,27 @@ ng g c componentes/'nombre-componente'
 ng g c servicios/'nombre-servicio'
 
 ```
+
+### BD
+
+First install the json-server
+
+```sh
+# Start the server for have bd.
+npm install json-server
+
+```
+
+> This is for emular a bd, save, update and modify the file .json
+
+```sh
+# Start the server for have bd.
+npm run server
+
+```
+
+
+
+### Errors and Solutions
+
+* [dbname_hibernate_sequence_doesnt_exist](https://www.yawintutor.com/java-sql-sqlsyntaxerrorexception-table-dbname-hibernate_sequence-doesnt-exist/)

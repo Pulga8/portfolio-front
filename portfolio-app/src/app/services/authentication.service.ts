@@ -21,7 +21,6 @@ export class AuthenticationService {
       return data;
     }))
   }
-
   get AuthUser(){
     return this.currentUserSubject.value;
   }
