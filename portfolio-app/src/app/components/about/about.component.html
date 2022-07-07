@@ -1,5 +1,5 @@
 <style>
-    .img-perfil{
+    .img-perfil {
         height: 306px;
         width: 330px;
         margin-top: -153px;
@@ -8,26 +8,26 @@
 <div class="mb-5">
     <div class="container">
         <div class="row ">
-            <img class=" img-perfil rounded-circle" src="https://weeby.studio/intro/preview/images/profile.jpg" alt="...">
+            <img class=" img-perfil rounded-circle" src="{{persona[0].img_portada}}" alt="...">
         </div>
         <div class="row">
             <div class="col-sm-3">
                 <div class="card-w50">
                     <div class="card-body px-0">
-                      <h5 class="card-title">{{persona[0].nombre}}{{persona[0].apellido}}</h5>
-                      <p class="card-text">{{persona[0].profesion}}</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <h5 class="card-title">{{persona[0].nombre}}{{persona[0].apellido}}</h5>
+                        <p class="card-text">{{persona[0].profesion}}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
-                  </div>
+                </div>
             </div>
             <div class="col">
                 <div class="card-w50">
                     <div class="card-body">
-                      <h5 class="card-title">Acerca de mi</h5>
-                      <p class="card-text">{{persona[0].about}}</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <h5 class="card-title">Acerca de mi</h5>
+                        <p class="card-text">{{persona[0].about}}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
