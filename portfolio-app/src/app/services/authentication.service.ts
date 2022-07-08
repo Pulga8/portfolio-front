@@ -7,22 +7,23 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  url="http://localhost:5000/auth";
+  url = "http://localhost:5000/auth";
   currentUserSubject: BehaviorSubject<any>;
-  constructor( private http:HttpClient) { 
+  constructor(private http: HttpClient) {
     console.log("El servicio de autentificación está corriendo");
     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'))
   }
 
-  Login(credenciales:any):Observable<any>{
-    return this.http.post(this.url,credenciales).pipe(map(data=>{
-      sessionStorage.setItem('currentUser',JSON.stringify(data));
+  Login(credenciales: any): Observable<any> {
+    return this.http.post(this.url, credenciales).pipe(map(data => {
+      sessionStorage.setItem('currentUser', JSON.stringify(data));
       this.currentUserSubject.next(data);
       return data;
     }))
   }
-  get AuthUser(){
+  get AuthUser() {
     return this.currentUserSubject.value;
   }
+  
 
 }
