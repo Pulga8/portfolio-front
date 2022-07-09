@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UsersService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { UsersService } from 'src/app/services/usuario.service';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router, private userService: UsersService) { }
+  constructor(private router: Router, private userService: UsersService, public portfolioService: PortfolioService) { }
 
   ngOnInit(): void {
   }
@@ -20,9 +21,5 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.userService.setLogged(false);
     this.router.navigate(['/login'])
-  }
-
-  isLogged(): Boolean {
-    return this.userService.getLogged();
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EducacionService } from 'src/app/services/educacion.service';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 import { Educacion } from '../../model/Educacion';
 
 @Component({
@@ -10,9 +11,13 @@ import { Educacion } from '../../model/Educacion';
 export class EducationComponent implements OnInit {
 
   educacion: Educacion[] = [];
+  isLogged: Boolean = this.portfolioService.isLogged();
+
 
   constructor(
-    private eduService: EducacionService
+    private eduService: EducacionService,
+    private portfolioService: PortfolioService 
+
   ) { }
 
   ngOnInit(): void {

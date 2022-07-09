@@ -55,8 +55,8 @@
           </a>
         </li>
       </ul>
-      <button class="btn btn-outline-light" (click)="login()" *ngIf="!this.isLogged()" type="submit">Log In</button>
-      <button class="btn btn-outline-light" (click)="logout()" *ngIf="this.isLogged()" type="submit">Log Out</button>
+      <button class="btn btn-outline-light" (click)="login()" *ngIf="!portfolioService.isLogged()" type="submit">Log In</button>
+      <button class="btn btn-outline-light" (click)="logout()" *ngIf="portfolioService.isLogged()" type="submit">Log Out</button>
     </div>
   </div>
 </nav>

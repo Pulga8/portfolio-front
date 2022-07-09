@@ -4,23 +4,36 @@
         width: 330px;
         margin-top: -153px;
     }
+
     div.logo>img:nth-child(1) {
-    width: 100%;
-  }
+        width: 100%;
+    }
+    .btn-outline-dark {
+        border-color: white;
+    }
 </style>
 <div class="mb-5">
     <div class="logo">
         <!-- https://cortomaltese.com/es/wp-content/uploads/sites/10/cortomaltese-home-slider-1.jpg -->
         <img class="rounded" height="514" src="../../../assets/cortomaltese-home-slider-1.jpg" alt="">
-      </div>
+    </div>
     <div class="container">
         <div class="row ">
             <img class=" img-perfil rounded-circle" src="{{persona[0].img_portada}}" alt="...">
         </div>
         <div class="row">
-            <!-- <a href="" class="btn btn-octicon float-right p-2" aria-label="Edit this file"><svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-pencil">
-                <path fill-rule="evenodd" d="M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z"></path>
-            </svg></a> -->
+            <div class="columns d-flex align-items-center">
+                <div *ngIf="this.isLogged" class="column d-flex ms-auto">
+                  <button class="btn btn-outline-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path
+                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                      <path fill-rule="evenodd"
+                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
             <div class="col-sm-3">
                 <div class="card-w50">
                     <div class="card-body px-0">
