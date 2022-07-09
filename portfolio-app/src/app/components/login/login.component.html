@@ -1,33 +1,17 @@
 <h1 class="m-5"> LOGIN </h1>
 <form [formGroup]="form" class="m-5" (ngSubmit)="onSent($event)">
       <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" formControlName="email"
-                  [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="email" formControlName="username"
                   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            <div *ngIf="Email?.errors && Email?.touched">
-                  <p *ngIf="Email?.hasError('required')" class="text-danger">
-                        The email is required.
-                  </p>
-                  <p *ngIf="Email?.hasError('email')" class="text-danger">
-                        The format of email must be valid.
-                  </p>
+            <div *ngIf="Username?.errors && Username?.touched">
             </div>
       </div>
       <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" formControlName="password"
-                  [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
                   class="form-control" id="exampleInputPassword1">
-            <div *ngIf="Password?.errors && Password?.touched">
-                  <p *ngIf="Password?.hasError('required')" class="text-danger">
-                        The Password is required.
-                  </p>
-                  <p *ngIf="Password?.hasError('minlength')" class="text-danger">
-                        The password have more eight characters.
-                  </p>
-            </div>
       </div>
       <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
