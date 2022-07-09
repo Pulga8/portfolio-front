@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Proyecto } from '../../model/Proyecto';
 import { ProyectoService } from 'src/app/services/proyecto.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -16,9 +17,14 @@ export class ProjectsComponent implements OnInit {
 
   constructor(
     private proService: ProyectoService,
-    private portfolioService: PortfolioService 
+    private portfolioService: PortfolioService,
+    private router: Router
 
   ) { }
+
+  goToForm() {
+    this.router.navigate(['/form-projects'])
+  }
 
   ngOnInit(): void {
     this.proService.getProyecto().subscribe((proyectos)=>[

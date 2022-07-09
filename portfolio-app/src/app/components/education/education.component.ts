@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EducacionService } from 'src/app/services/educacion.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { Educacion } from '../../model/Educacion';
@@ -16,9 +17,14 @@ export class EducationComponent implements OnInit {
 
   constructor(
     private eduService: EducacionService,
-    private portfolioService: PortfolioService 
+    private portfolioService: PortfolioService,
+    private router: Router
 
   ) { }
+
+  goToForm() {
+    this.router.navigate(['/form-education'])
+  }
 
   ngOnInit(): void {
     this.eduService.getEducacion().subscribe((data) => [

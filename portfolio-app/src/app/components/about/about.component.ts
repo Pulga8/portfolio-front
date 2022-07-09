@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/Persona';
 import { PersonaService } from 'src/app/services/persona.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
@@ -16,9 +17,14 @@ export class AboutComponent implements OnInit {
   
   constructor(
     private personaServices: PersonaService,
-    private portfolioService: PortfolioService 
+    private portfolioService: PortfolioService ,
+    private router: Router
+
     ) { }
-    
+  
+  goToForm() {
+    this.router.navigate(['/form-about'])
+  }
 
 
   ngOnInit(): void {

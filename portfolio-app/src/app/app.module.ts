@@ -16,6 +16,11 @@ import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PortfolioService } from './services/portfolio.service';
+import { FormAboutComponent } from './components/form-about/form-about.component';
+import { FormEducationComponent } from './components/form-educaction/form-education.component';
+import { FormExperienceComponent } from './components/form-experience/form-experience.component';
+import { FormSkillsComponent } from './components/form-skills/form-skills.component';
+import { FormProjectsComponent } from './components/form-projects/form-projects.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,11 @@ import { PortfolioService } from './services/portfolio.service';
     ProjectsComponent,
     LoginComponent,
     PortfolioComponent,
+    FormAboutComponent,
+    FormEducationComponent,
+    FormExperienceComponent,
+    FormSkillsComponent,
+    FormProjectsComponent,
   ],
   imports: [
     BrowserModule,

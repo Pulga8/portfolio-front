@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Skill } from 'src/app/model/Skill';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { SkillService } from 'src/app/services/skill.service';
@@ -16,9 +17,14 @@ export class SkillsComponent implements OnInit {
 
   constructor(
     private skillService: SkillService,
-    private portfolioService: PortfolioService 
+    private portfolioService: PortfolioService,
+    private router: Router
 
   ) { }
+
+  goToForm() {
+    this.router.navigate(['/form-skills'])
+  }
 
   ngOnInit(): void {
     this.skillService.getSkill().subscribe((skills) => [
