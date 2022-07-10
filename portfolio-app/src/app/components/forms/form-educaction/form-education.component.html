@@ -1,0 +1,38 @@
+<style>
+    .botonera {
+        display: flex;
+        justify-content: space-between;
+
+        width: 100%;
+    }
+</style>
+<app-header></app-header>
+<table class="table">
+    <div class="botonera">
+        <button type="button" class="btn btn-link" (click)="goToHome()">
+            Volver
+        </button>
+        <button type="button" class="btn btn-success" (click)="goToAmb()">
+            Agregar
+        </button>
+    </div>
+    <ol class="list-group " *ngFor="let edu of educacion">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <h5>{{edu.titulo}}</h5>
+                {{edu.descripcion}}
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" (click)="goToEdit(edu.id, edu)">
+                    Editar
+                </button>
+                <button type="button" class="btn btn-danger" (click)="goToDelete(edu.id)">
+                    Eliminar
+                </button>
+            </div>
+        </li>
+    </ol>
+</table>
+<div *ngIf="this.formsend" class="alert alert-success" role="alert">
+    La educacion fue agregada con éxito.
+</div>

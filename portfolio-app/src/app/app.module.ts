@@ -16,11 +16,12 @@ import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PortfolioService } from './services/portfolio.service';
-import { FormAboutComponent } from './components/form-about/form-about.component';
-import { FormEducationComponent } from './components/form-educaction/form-education.component';
-import { FormExperienceComponent } from './components/form-experience/form-experience.component';
-import { FormSkillsComponent } from './components/form-skills/form-skills.component';
-import { FormProjectsComponent } from './components/form-projects/form-projects.component';
+import { FormAboutComponent } from './components/forms/form-about/form-about.component';
+import { FormEducationComponent } from './components/forms/form-educaction/form-education.component';
+import { FormExperienceComponent } from './components/forms/form-experience/form-experience.component';
+import { FormSkillsComponent } from './components/forms/form-skills/form-skills.component';
+import { FormProjectsComponent } from './components/forms/form-projects/form-projects.component';
+import { AbmEducationComponent } from './components/forms/amb/amb-education/abm-education.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FormProjectsComponent } from './components/form-projects/form-projects.
     FormExperienceComponent,
     FormSkillsComponent,
     FormProjectsComponent,
+    AbmEducationComponent,
   ],
   imports: [
     BrowserModule,
