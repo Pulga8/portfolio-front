@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div>
+    <button type="button" class="btn btn-link" (click)="goToForm()">
+        Volver
+    </button>
+</div>
+<form [formGroup]="form" class="m-5" (ngSubmit)="onSent($event)">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+        <input type="titulo" formControlName="titulo" class="form-control" id="exampleFormControlInput1"
+            placeholder="Habilidad"
+            [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched, 'is-valid': !Titulo?.errors && Titulo?.touched}"
+            class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div *ngIf="Titulo?.errors && Titulo?.touched">
+            <p *ngIf="Titulo?.hasError('required')" class="text-danger">
+                El título es requerido.
+            </p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Progreso</label>
+        <input type="progreso" formControlName="progreso" class="form-control" id="exampleFormControlInput1"
+            placeholder="Porcentaje del progreso"
+            [ngClass]="{'is-invalid': Progreso?.errors && Progreso?.touched, 'is-valid': !Progreso?.errors && Progreso?.touched}"
+            class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div *ngIf="Progreso?.errors && Progreso?.touched">
+            <p *ngIf="Progreso?.hasError('required')" class="text-danger">
+                El progreso es requerid.
+            </p>
+        </div>
+    </div>
+    <button type="submit" *ngIf="!(Titulo?.hasError('required') || Progreso?.hasError('required'))" class="btn btn-primary">Enviar</button>
+</form>
+<div *ngIf="this.formsend" class="alert alert-success" role="alert">
+    La habilidad fue agregada con éxito.
+</div>
