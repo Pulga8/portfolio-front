@@ -1,1 +1,34 @@
-<p>form-experience works!</p>
+<style>
+    .botonera {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+</style>
+<app-header></app-header>
+<table class="table">
+    <div class="botonera">
+        <button type="button" class="btn btn-link" (click)="goToHome()">
+            Volver
+        </button>
+        <button type="button" class="btn btn-success" (click)="goToAbm()">
+            Agregar
+        </button>
+    </div>
+    <ol class="list-group " *ngFor="let expe of experiencia">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <h5>{{expe.titulo}}</h5>
+                {{expe.descripcion}}
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" (click)="goToEdit(expe.id, expe)">
+                    Editar
+                </button>
+                <button type="button" class="btn btn-danger" (click)="goToDelete(expe.id)">
+                    Eliminar
+                </button>
+            </div>
+        </li>
+    </ol>
+</table>

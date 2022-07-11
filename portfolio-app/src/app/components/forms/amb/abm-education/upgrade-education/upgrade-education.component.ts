@@ -18,7 +18,6 @@ export class UpgradeEducationComponent implements OnInit {
   educacion: Educacion = new Educacion("", "");
 
   constructor(
-    private formBuilder: FormBuilder,
     private eduService: EducacionService,
     private route: Router,
     private router: ActivatedRoute,

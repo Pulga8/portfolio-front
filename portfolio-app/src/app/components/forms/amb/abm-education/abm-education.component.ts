@@ -40,6 +40,7 @@ export class AbmEducationComponent implements OnInit {
     event.preventDefault;
     this.eduService.setEducacion(this.form.value).subscribe()
     this.formsend = true;
+    this.form.reset();
   }
 
   goToForm() {

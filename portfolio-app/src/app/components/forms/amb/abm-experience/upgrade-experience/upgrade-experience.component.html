@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div>
+    <button type="button" class="btn btn-link" (click)="goToForm()">
+        Volver
+    </button>
+</div>
+<form [formGroup]="form" class="m-5" (ngSubmit)="onSent($event)">
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Titulo</label>
+        <input
+            formControlName="titulo" 
+            class="form-control" 
+            placeholder="Agregue un titulo" 
+            (ngModel)="this.titulo"
+        >
+    </div>
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripcion</label>
+        <input type="descripcion" 
+            formControlName="descripcion" 
+            class="form-control" 
+            id="descripcion"
+            placeholder="Alguna Descripcion" 
+            [value]="this.descripcion"
+            pattern ="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+            required
+            [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched, 'is-valid': !Descripcion?.errors && Descripcion?.touched}"
+            class="form-control" 
+            aria-describedby="emailHelp">
+        <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+            <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                La descripcion es requerida.
+            </p>
+        </div>
+    </div>
+    <button type="submit" *ngIf="!(Titulo?.hasError('required') || Descripcion?.hasError('required'))"
+        class="btn btn-primary">Enviar</button>
+</form>
+<div *ngIf="formsend" class="alert alert-success" role="alert">
+    La experiencia fue agregada con éxito.
+</div>

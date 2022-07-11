@@ -22,30 +22,39 @@ export class FormEducationComponent implements OnInit {
     this.getListEdu();
   }
 
+  /*
+    ---------------------------------------
+    Métodos para navegar entre componentes.
+    ---------------------------------------
+  */
   goToAmb() {
     this.route.navigate(['/abm-education'])
-  }
-
-  goToDelete(id: number | any) {
-    this.eduService.deleteEducacion(id).subscribe((dato) => {
-      console.log(dato);
-      this.getListEdu();
-    });
-  }
-
-  private getListEdu() {
-    this.eduService.getEducacion().subscribe((data) => [
-      this.educacion = data
-    ])
   }
 
   goToEdit(id: number | any, educacion: Educacion) {
     this.route.navigate(['/upgrade-education', id, educacion])
   }
-
-
+  
   goToHome() {
     this.route.navigate(['/portfolio'])
+  }
+
+  goToDelete(id: number | any) {
+    this.eduService.deleteEducacion(id).subscribe((dato) => {
+      this.getListEdu();
+    });
+  }
+  
+  /* 
+    ----------------------------------------------
+    Genera una lista de la entidad, nos sirve para 
+    traer los datos desde el back.
+    ----------------------------------------------
+  */
+  private getListEdu() {
+    this.eduService.getEducacion().subscribe((data) => [
+      this.educacion = data
+    ])
   }
 
 }
