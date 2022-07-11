@@ -24,10 +24,7 @@ export class EducacionService {
     return this.http.delete<Educacion>(this.URL + 'delete/' + id);
   }
 
-  /* 
-    Éste hace falta implementarlo en el back aún.
-  */
-  public editEducacion(id: number, educacion: Educacion): Observable<Object> {
-    return this.http.post<Educacion>(this.URL + 'modificar/' + id, educacion);
+  public editEducacion(id: number, educacion: Educacion): Observable<any> {
+    return this.http.post(this.URL + 'modificar/' + id, educacion);
   }
 }

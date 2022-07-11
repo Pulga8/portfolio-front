@@ -11,8 +11,6 @@ import { EducacionService } from 'src/app/services/educacion.service';
 export class FormEducationComponent implements OnInit {
 
   educacion: Educacion[] = [];
-  formsend: Boolean = false;
-
 
   constructor(
     private eduService: EducacionService,
@@ -42,7 +40,7 @@ export class FormEducationComponent implements OnInit {
   }
 
   goToEdit(id: number | any, educacion: Educacion) {
-    /*Implementar método en el back*/
+    this.route.navigate(['/upgrade-education', id, educacion])
   }
 
 

@@ -21,7 +21,12 @@ import { FormEducationComponent } from './components/forms/form-educaction/form-
 import { FormExperienceComponent } from './components/forms/form-experience/form-experience.component';
 import { FormSkillsComponent } from './components/forms/form-skills/form-skills.component';
 import { FormProjectsComponent } from './components/forms/form-projects/form-projects.component';
-import { AbmEducationComponent } from './components/forms/amb/amb-education/abm-education.component';
+import { AbmEducationComponent } from './components/forms/amb/abm-education/abm-education.component';
+import { AbmAboutComponent } from './components/forms/amb/abm-about/abm-about.component';
+import { AbmExperienceComponent } from './components/forms/amb/abm-experience/abm-experience.component';
+import { AbmProjectsComponent } from './components/forms/amb/abm-projects/abm-projects.component';
+import { AbmSkillsComponent } from './components/forms/amb/abm-skills/abm-skills.component';
+import { UpgradeEducationComponent } from './components/forms/amb/abm-education/upgrade-education/upgrade-education.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +46,11 @@ import { AbmEducationComponent } from './components/forms/amb/amb-education/abm-
     FormSkillsComponent,
     FormProjectsComponent,
     AbmEducationComponent,
+    AbmAboutComponent,
+    AbmExperienceComponent,
+    AbmProjectsComponent,
+    AbmSkillsComponent,
+    UpgradeEducationComponent,
   ],
   imports: [
     BrowserModule,

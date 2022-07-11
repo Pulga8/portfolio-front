@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AbmEducationComponent } from './components/forms/amb/amb-education/abm-education.component';
+import { AbmEducationComponent } from './components/forms/amb/abm-education/abm-education.component';
+import { UpgradeEducationComponent } from './components/forms/amb/abm-education/upgrade-education/upgrade-education.component';
 import { FormAboutComponent } from './components/forms/form-about/form-about.component';
 import { FormEducationComponent } from './components/forms/form-educaction/form-education.component';
 import { FormExperienceComponent } from './components/forms/form-experience/form-experience.component';
@@ -20,6 +21,8 @@ const routes: Routes = [
   { path: 'form-projects', component: FormProjectsComponent },
   { path: 'form-skills', component: FormSkillsComponent },
   { path: 'abm-education', component: AbmEducationComponent },
+  { path: 'upgrade-education/:id', component: UpgradeEducationComponent },
+
 //  { path: 'abm-experience', component: AbmExperienceComponent },
 //  { path: 'abm-projects', component: AbmProjectsComponent },
 //  { path: 'abm-skills', component: AbmSkillsComponent },
