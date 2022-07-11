@@ -4,6 +4,8 @@ import { AbmEducationComponent } from './components/forms/amb/abm-education/abm-
 import { UpgradeEducationComponent } from './components/forms/amb/abm-education/upgrade-education/upgrade-education.component';
 import { AbmExperienceComponent } from './components/forms/amb/abm-experience/abm-experience.component';
 import { UpgradeExperienceComponent } from './components/forms/amb/abm-experience/upgrade-experience/upgrade-experience.component';
+import { AbmProjectsComponent } from './components/forms/amb/abm-projects/abm-projects.component';
+import { UpgradeProjectsComponent } from './components/forms/amb/abm-projects/upgrade-projects/upgrade-projects.component';
 import { FormAboutComponent } from './components/forms/form-about/form-about.component';
 import { FormEducationComponent } from './components/forms/form-educaction/form-education.component';
 import { FormExperienceComponent } from './components/forms/form-experience/form-experience.component';
@@ -26,8 +28,8 @@ const routes: Routes = [
   { path: 'upgrade-education/:id', component: UpgradeEducationComponent },
   { path: 'abm-experience', component: AbmExperienceComponent },
   { path: 'upgrade-experience/:id', component: UpgradeExperienceComponent },
-
-//  { path: 'abm-projects', component: AbmProjectsComponent },
+  { path: 'abm-projects', component: AbmProjectsComponent },
+  { path: 'upgrade-projects/:id', component: UpgradeProjectsComponent },
 //  { path: 'abm-skills', component: AbmSkillsComponent },
 //  { path: 'abm-about', component: AbmAboutComponent },
 

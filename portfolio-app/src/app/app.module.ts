@@ -28,6 +28,8 @@ import { AbmProjectsComponent } from './components/forms/amb/abm-projects/abm-pr
 import { AbmSkillsComponent } from './components/forms/amb/abm-skills/abm-skills.component';
 import { UpgradeEducationComponent } from './components/forms/amb/abm-education/upgrade-education/upgrade-education.component';
 import { UpgradeExperienceComponent } from './components/forms/amb/abm-experience/upgrade-experience/upgrade-experience.component';
+import { UpgradeSkillsComponent } from './components/forms/amb/abm-skills/upgrade-skills/upgrade-skills.component';
+import { UpgradeProjectsComponent } from './components/forms/amb/abm-projects/upgrade-projects/upgrade-projects.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { UpgradeExperienceComponent } from './components/forms/amb/abm-experienc
     AbmSkillsComponent,
     UpgradeEducationComponent,
     UpgradeExperienceComponent,
+    UpgradeSkillsComponent,
+    UpgradeProjectsComponent,
   ],
   imports: [
     BrowserModule,
