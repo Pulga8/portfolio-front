@@ -35,9 +35,7 @@ export class LoginComponent implements OnInit {
 
   onSent(event: Event) {
     event.preventDefault;
-    console.log("Form Value:" + JSON.stringify(this.form.value));
     this.userService.login(this.form.value).subscribe(data => {
-      console.log("DATA:" + JSON.stringify(data));
       if (data == true) {
         this.userService.setLogged(true);
         this.route.navigate(['/portfolio'])

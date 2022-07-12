@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { inject, waitForAsync } from '@angular/core/testing';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/Persona';
@@ -38,11 +39,10 @@ export class UpgradeAboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.router.snapshot.params['id'];
-    this.peService.getPersonaPorId(this.id).subscribe((dato) =>{
+    this.peService.getPersonaPorId(this.id).subscribe((dato) => {
       this.persona = dato
+      this.setValues()
     });
-    //this.persona = new Persona(this.nombre, this.apellido, this.profesion, this.about, this.img_portada);
-    this.setValues();
   }
 
   get Nombre() {
@@ -66,11 +66,11 @@ export class UpgradeAboutComponent implements OnInit {
   }
 
   setValues() {
-    this.form.patchValue({ nombre: this.nombre });
-    this.form.patchValue({ apellido: this.apellido });
-    this.form.patchValue({ profesion: this.profesion });
-    this.form.patchValue({ about: this.about });
-    this.form.patchValue({ img_portada: this.img_portada });
+    this.form.patchValue({ nombre: this.persona.nombre });
+    this.form.patchValue({ apellido: this.persona.apellido });
+    this.form.patchValue({ profesion: this.persona.profesion });
+    this.form.patchValue({ about: this.persona.about });
+    this.form.patchValue({ img_portada: this.persona.img_portada });
   }
   onSent(event: Event) {
     event.preventDefault;
