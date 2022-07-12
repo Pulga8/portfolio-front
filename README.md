@@ -136,7 +136,36 @@ npm run server
 
 ## TO DO
 
-Agregar Seguridad https://argentinaprograma.inti.gob.ar/mod/page/view.php?id=139
+* Agregar Seguridad https://argentinaprograma.inti.gob.ar/mod/page/view.php?id=139
+
+* No pasar las entidades por las Url, utilizar método find by id.
+
+* Agregar cambio de portada y fotos a las listas de experiencias eduacion etc.
+
+* Evitar que se pueda agregar o guardar campos vacíos o con el String vacío.
+
+## Fixme
+
+* Futuros:
+En la línea:42 del `upgrade-about.component.ts` tenemos lo siguiente:
+
+```js
+42    this.peService.getPersonaPorId(this.id).subscribe((dato) => {
+43        this.persona = dato
+44        this.setValues()    <----
+45    });
+```
+
+El `subscribe()` de la línea:42 nos devuelve un futuro, osea es asíncrono, por lo tanto si nosotros colocaramos el `setValues()` por fuera del futuro, de ésta forma:
+
+```js
+42    this.peService.getPersonaPorId(this.id).subscribe((dato) => {
+43        this.persona = dato
+44    });
+45        this.setValues()    <----
+```
+
+Tendríamos un problema, y es que no se setearán con los valores que traiga el futuro, y ubicando el setValues(), dentro, tendremos una pequeña visión de los valores del objeto vacío en nuestro input, con un waitForAsync capaz se solucione, no sé usarlo.
 
 ### Errors and Solutions
 
