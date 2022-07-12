@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div>
+    <button type="button" class="btn btn-link" (click)="goToHome()">
+        Volver
+    </button>
+</div>
+<form [formGroup]="form" class="m-5" (ngSubmit)="onSent($event)">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input
+            formControlName="nombre" 
+            class="form-control" 
+            placeholder="Agregue un nombre" 
+            (ngModel)="this.nombre"
+        >
+    </div>
+    <div class="mb-3">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input
+            formControlName="apellido" 
+            class="form-control" 
+            placeholder="Agregue un apellido" 
+            (ngModel)="this.apellido"
+        >
+    </div>
+    <div class="mb-3">
+        <label for="profesion" class="form-label">Profesión</label>
+        <input
+            formControlName="profesion" 
+            class="form-control" 
+            placeholder="Agregue una profesión" 
+            (ngModel)="this.profesion"
+        >
+    </div>
+    <div class="mb-3">
+        <label for="about" class="form-label">Acerca de usted</label>
+        <input
+            formControlName="about" 
+            class="form-control" 
+            placeholder="Agregue algo acerca de usted" 
+            (ngModel)="this.about"
+        >
+    </div>
+    <div class="mb-3">
+        <label for="img_portada" class="form-label">Imagen de Perfil</label>
+        <input
+            formControlName="img_portada" 
+            class="form-control" 
+            placeholder="Agregue una imagen a su perfil" 
+            (ngModel)="this.img_portada"
+        >
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+<div *ngIf="formsend" class="alert alert-success" role="alert">
+    La persona fue editada con éxito.
+</div>

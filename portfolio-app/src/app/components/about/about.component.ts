@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/Persona';
 import { PersonaService } from 'src/app/services/persona.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
-import { UsersService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-about',
@@ -21,11 +20,10 @@ export class AboutComponent implements OnInit {
     private router: Router
 
     ) { }
-  
-  goToForm() {
-    this.router.navigate(['/form-about'])
-  }
 
+  goToEdit(id: number | any, p: Persona) {
+    this.router.navigate(['/upgrade-about', id, p])
+  }
 
   ngOnInit(): void {
     this.personaServices.getPersona().subscribe((data) => {

@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UpgradeAboutComponent } from './components/forms/amb/abm-about/upgrade-about/upgrade-about.component';
 import { AbmEducationComponent } from './components/forms/amb/abm-education/abm-education.component';
 import { UpgradeEducationComponent } from './components/forms/amb/abm-education/upgrade-education/upgrade-education.component';
 import { AbmExperienceComponent } from './components/forms/amb/abm-experience/abm-experience.component';
@@ -34,8 +35,7 @@ const routes: Routes = [
   { path: 'upgrade-projects/:id', component: UpgradeProjectsComponent },
   { path: 'abm-skills', component: AbmSkillsComponent },
   { path: 'upgrade-skills/:id', component: UpgradeSkillsComponent },
-//  { path: 'abm-about', component: AbmAboutComponent },
-
+  { path: 'upgrade-about/:id', component: UpgradeAboutComponent },
 
 ];
 
