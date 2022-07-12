@@ -38,12 +38,10 @@ export class UpgradeAboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.router.snapshot.params['id'];
-    this.nombre = this.router.snapshot.params['nombre'];
-    this.apellido = this.router.snapshot.params['apellido'];
-    this.profesion = this.router.snapshot.params['profesion'];
-    this.about = this.router.snapshot.params['about'];
-    this.img_portada = this.router.snapshot.params['img_portada'];
-    this.persona = new Persona(this.nombre, this.apellido, this.profesion, this.about, this.img_portada);
+    this.peService.getPersonaPorId(this.id).subscribe((dato) =>{
+      this.persona = dato
+    });
+    //this.persona = new Persona(this.nombre, this.apellido, this.profesion, this.about, this.img_portada);
     this.setValues();
   }
 

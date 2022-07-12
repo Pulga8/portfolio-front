@@ -21,8 +21,8 @@ export class AboutComponent implements OnInit {
 
     ) { }
 
-  goToEdit(id: number | any, p: Persona) {
-    this.router.navigate(['/upgrade-about', id, p])
+  goToEdit(id: number | any) {
+    this.router.navigate(['/upgrade-about', id])
   }
 
   ngOnInit(): void {
