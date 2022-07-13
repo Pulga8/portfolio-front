@@ -14,6 +14,8 @@ export class UpgradeAboutComponent implements OnInit {
 
   form: FormGroup;
   formsend: Boolean = false;
+  notformsend: Boolean = false;
+
   id: number = 0;
   nombre: String = "";
   apellido: String = "";
@@ -29,11 +31,11 @@ export class UpgradeAboutComponent implements OnInit {
     private router: ActivatedRoute,
   ) {
     this.form = new FormGroup({
-      nombre: new FormControl(Validators.required, Validators.minLength(0)),
-      apellido: new FormControl(Validators.required, Validators.minLength(0)),
-      profesion: new FormControl(Validators.required, Validators.minLength(0)),
-      about: new FormControl(Validators.required, Validators.minLength(0)),
-      img_portada: new FormControl(Validators.required, Validators.minLength(0))
+      nombre: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")]),
+      apellido: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")]),
+      profesion: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")]),
+      about: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")]),
+      img_portada: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")])
     });
   }
 
@@ -74,8 +76,13 @@ export class UpgradeAboutComponent implements OnInit {
   }
   onSent(event: Event) {
     event.preventDefault;
-    this.peService.editPersona(this.id, this.form.value).subscribe();
-    this.formsend = true;
+    if(this.form.valid){
+      this.peService.editPersona(this.id, this.form.value).subscribe();
+      this.formsend = true;
+    }else{
+      this.notformsend = true;
+      this.form.markAllAsTouched();
+    }
   }
 
   goToHome() {

@@ -11,6 +11,7 @@ import { EducacionService } from 'src/app/services/educacion.service';
 export class AbmEducationComponent implements OnInit {
   form: FormGroup;
   formsend: Boolean = false;
+  notformsend: Boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -19,8 +20,8 @@ export class AbmEducationComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group(
       {
-        titulo: ['', [Validators.required], Validators.minLength(0)],
-        descripcion: ['', [Validators.required, Validators.maxLength(40), Validators.minLength(0)]],
+        titulo: ['', [Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")]],
+        descripcion: ['', [Validators.required, Validators.maxLength(40), Validators.minLength(0),Validators.pattern("\(?!\\s).+")]],
       }
     )
   }
@@ -38,9 +39,14 @@ export class AbmEducationComponent implements OnInit {
 
   onSent(event: Event) {
     event.preventDefault;
-    this.eduService.setEducacion(this.form.value).subscribe()
-    this.formsend = true;
-    this.form.reset();
+    if(this.form.valid){
+      this.eduService.setEducacion(this.form.value).subscribe()
+      this.formsend = true;
+      this.form.reset();
+    }else{
+      this.notformsend = true;
+      this.form.markAllAsTouched();
+    }
   }
 
   goToForm() {

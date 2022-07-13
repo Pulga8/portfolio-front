@@ -144,6 +144,12 @@ npm run server
 
 * Evitar que se pueda agregar o guardar campos vacíos o con el String vacío.
 
+* Añadir scrollspy [boostrapd](https://getbootstrap.com/docs/5.2/components/scrollspy/)
+
+* Validators.pattern("\(?!\\s).+")  con ésto podemos validar q no se ingresen campos con char vacío. 
+
+* Página para chequear [reguex](https://regex101.com/r/gC0xA6/31)
+
 ## Fixme
 
 * Futuros:

@@ -22,7 +22,6 @@ import { FormExperienceComponent } from './components/forms/form-experience/form
 import { FormSkillsComponent } from './components/forms/form-skills/form-skills.component';
 import { FormProjectsComponent } from './components/forms/form-projects/form-projects.component';
 import { AbmEducationComponent } from './components/forms/amb/abm-education/abm-education.component';
-import { AbmAboutComponent } from './components/forms/amb/abm-about/abm-about.component';
 import { AbmExperienceComponent } from './components/forms/amb/abm-experience/abm-experience.component';
 import { AbmProjectsComponent } from './components/forms/amb/abm-projects/abm-projects.component';
 import { AbmSkillsComponent } from './components/forms/amb/abm-skills/abm-skills.component';
@@ -50,7 +49,6 @@ import { UpgradeAboutComponent } from './components/forms/amb/abm-about/upgrade-
     FormSkillsComponent,
     FormProjectsComponent,
     AbmEducationComponent,
-    AbmAboutComponent,
     AbmExperienceComponent,
     AbmProjectsComponent,
     AbmSkillsComponent,

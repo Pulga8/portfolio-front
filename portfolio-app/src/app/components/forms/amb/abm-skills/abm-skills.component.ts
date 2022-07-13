@@ -12,6 +12,8 @@ export class AbmSkillsComponent implements OnInit {
 
   form: FormGroup;
   formsend: Boolean = false;
+  notformsend: Boolean = false;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,8 +22,8 @@ export class AbmSkillsComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group(
       {
-        titulo: ['', [Validators.required], Validators.minLength(0)],
-        progreso: ['', [Validators.required, Validators.maxLength(2), Validators.minLength(0)]],
+        titulo: ['', [Validators.required], Validators.minLength(0),Validators.pattern("\(?!\\s).+")],
+        progreso: ['', [Validators.required, Validators.maxLength(2), Validators.minLength(0),Validators.pattern("\(?!\\s).+")]],
       }
     )
   }
@@ -39,9 +41,14 @@ export class AbmSkillsComponent implements OnInit {
 
   onSent(event: Event) {
     event.preventDefault;
-    this.skillService.setSkill(this.form.value).subscribe()
-    this.formsend = true;
-    this.form.reset();
+    if(this.form.valid){
+      this.skillService.setSkill(this.form.value).subscribe()
+      this.formsend = true;
+      this.form.reset();
+    }else{
+      this.notformsend = true;
+      this.form.markAllAsTouched();
+    }
   }
 
   goToForm() {

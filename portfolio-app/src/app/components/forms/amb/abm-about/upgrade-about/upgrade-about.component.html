@@ -11,31 +11,59 @@
             formControlName="nombre" 
             class="form-control" 
             placeholder="Agregue un nombre" 
+            id="nombre"
+            [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.touched, 'is-valid': !Nombre?.errors && Nombre?.touched}" 
         >
+        <div *ngIf="Nombre?.errors && Nombre?.touched">
+            <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                El nombre es requerido.
+            </p>
+        </div>
     </div>
     <div class="mb-3">
         <label for="apellido" class="form-label">Apellido</label>
         <input
             formControlName="apellido" 
             class="form-control" 
-            placeholder="Agregue un apellido" 
+            placeholder="Agregue un apellido"
+            id="apellido"
+            [ngClass]="{'is-invalid': Apellido?.errors && Apellido?.touched, 'is-valid': !Apellido?.errors && Apellido?.touched}" 
         >
+        <div *ngIf="Apellido?.errors && Apellido?.touched">
+            <p *ngIf="Apellido?.hasError('required')" class="text-danger">
+                El apellido es requerido.
+            </p>
+        </div>
     </div>
     <div class="mb-3">
         <label for="profesion" class="form-label">Profesión</label>
         <input
             formControlName="profesion" 
             class="form-control" 
-            placeholder="Agregue una profesión" 
+            placeholder="Agregue una profesión"
+            id="profesion"
+            [ngClass]="{'is-invalid': Profesion?.errors && Profesion?.touched, 'is-valid': !Profesion?.errors && Profesion?.touched}" 
         >
+        <div *ngIf="Profesion?.errors && Profesion?.touched">
+            <p *ngIf="Profesion?.hasError('required')" class="text-danger">
+                El campo profesion es requerido.
+            </p>
+        </div>
     </div>
     <div class="mb-3">
         <label for="about" class="form-label">Acerca de usted</label>
         <input
             formControlName="about" 
             class="form-control" 
-            placeholder="Agregue algo acerca de usted" 
+            placeholder="Agregue algo acerca de usted"
+            id="about"
+            [ngClass]="{'is-invalid': About?.errors && About?.touched, 'is-valid': !About?.errors && About?.touched}" 
         >
+        <div *ngIf="About?.errors && About?.touched">
+            <p *ngIf="About?.hasError('required')" class="text-danger">
+                El campo acerca de es requerido.
+            </p>
+        </div>
     </div>
     <div class="mb-3">
         <label for="img_portada" class="form-label">Imagen de Perfil</label>
@@ -43,10 +71,27 @@
             formControlName="img_portada" 
             class="form-control" 
             placeholder="Agregue una imagen a su perfil" 
+            id="img_portada"
+            [ngClass]="{'is-invalid': Img_portada?.errors && Img_portada?.touched, 'is-valid': !Img_portada?.errors && Img_portada?.touched}" 
         >
+        <div *ngIf="Img_portada?.errors && Img_portada?.touched">
+            <p *ngIf="Img_portada?.hasError('required')" class="text-danger">
+                La imagen es requerida.
+            </p>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" 
+    *ngIf="!(Nombre?.hasError('required') || Apellido?.hasError('required') || Profesion?.hasError('required') || About?.hasError('required') || Img_portada?.hasError('required')) 
+        && (!Nombre?.errors && Nombre?.touched)
+        && (!Apellido?.errors && Apellido?.touched)
+        && (!Profesion?.errors && Profesion?.touched)
+        && (!About?.errors && About?.touched)
+        && (!Img_portada?.errors && Img_portada?.touched)"
+        class="btn btn-primary">Enviar</button>
 </form>
 <div *ngIf="formsend" class="alert alert-success" role="alert">
     La persona fue editada con éxito.
+</div>
+<div *ngIf="notformsend" class="alert alert-danger" role="alert">
+    Falló al editar la persona.
 </div>

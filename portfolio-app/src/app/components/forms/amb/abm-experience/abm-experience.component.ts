@@ -12,6 +12,7 @@ export class AbmExperienceComponent implements OnInit {
 
   form: FormGroup;
   formsend: Boolean = false;
+  notformsend: Boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,8 +21,8 @@ export class AbmExperienceComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group(
       {
-        titulo: ['', [Validators.required], Validators.minLength(0)],
-        descripcion: ['', [Validators.required, Validators.maxLength(40), Validators.minLength(0)]],
+        titulo: ['', [Validators.required], Validators.minLength(0),Validators.pattern("\(?!\\s).+")],
+        descripcion: ['', [Validators.required, Validators.maxLength(40), Validators.minLength(0),Validators.pattern("\(?!\\s).+")]],
       }
     )
   }
@@ -39,9 +40,14 @@ export class AbmExperienceComponent implements OnInit {
 
   onSent(event: Event) {
     event.preventDefault;
-    this.expeService.setExperiencia(this.form.value).subscribe()
-    this.formsend = true;
-    this.form.reset();
+    if(this.form.valid){
+      this.expeService.setExperiencia(this.form.value).subscribe()
+      this.formsend = true;
+      this.form.reset();
+    }else{
+      this.notformsend = true;
+      this.form.markAllAsTouched();
+    }
   }
 
   goToForm() {

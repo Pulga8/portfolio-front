@@ -6,11 +6,14 @@
 </div>
 <form [formGroup]="form" class="m-5" (ngSubmit)="onSent($event)">
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Titulo</label>
-        <input type="titulo" formControlName="titulo" class="form-control" id="exampleFormControlInput1"
+        <label for="titulo" class="form-label">Titulo</label>
+        <input type="titulo" 
+            formControlName="titulo" 
+            class="form-control" 
             placeholder="Tecnico/a Electromecanico/a"
-            [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched, 'is-valid': !Titulo?.errors && Titulo?.touched}"
-            class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            id="titulo"
+            [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched, 'is-valid': !Titulo?.errors && Titulo?.touched}" 
+        >
         <div *ngIf="Titulo?.errors && Titulo?.touched">
             <p *ngIf="Titulo?.hasError('required')" class="text-danger">
                 El título es requerido.
@@ -18,19 +21,22 @@
         </div>
     </div>
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Descripcion</label>
-        <input type="descripcion" formControlName="descripcion" class="form-control" id="exampleFormControlInput1"
+        <label for="descripcion" class="form-label">Descripcion</label>
+        <input type="descripcion" formControlName="descripcion" class="form-control" id="descripcion"
             placeholder="Alguna Descripcion"
             [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched, 'is-valid': !Descripcion?.errors && Descripcion?.touched}"
-            class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            class="form-control">
         <div *ngIf="Descripcion?.errors && Descripcion?.touched">
-            <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
-                La descripcion es requerida.
-            </p>
+            <p *ngIf="Descripcion?.hasError('required')" class="text-danger"> La descripcion es requerida. </p>
         </div>
     </div>
-    <button type="submit" *ngIf="!(Titulo?.hasError('required') || Descripcion?.hasError('required'))" class="btn btn-primary">Enviar</button>
+    <button type="submit" *ngIf="!(Titulo?.hasError('required') || Descripcion?.hasError('required')) 
+    && (!Descripcion?.errors && Descripcion?.touched)
+    && (!Titulo?.errors && Titulo?.touched)" class="btn btn-primary">Enviar</button>
 </form>
-<div *ngIf="this.formsend" class="alert alert-success" role="alert">
+<div *ngIf="formsend" class="alert alert-success" role="alert">
     La experiencia fue agregada con éxito.
+</div>
+<div *ngIf="notformsend" class="alert alert-danger" role="alert">
+    Falló al agregar la experiencia.
 </div>

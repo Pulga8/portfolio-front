@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { PortfolioService } from './services/portfolio.service';
 
 @Component({
@@ -9,15 +8,8 @@ import { PortfolioService } from './services/portfolio.service';
 })
 export class AppComponent {
   title = 'portfolio-app';
-  faCoffee = faCoffee;
-  data ={}
   constructor(
     private aceService: PortfolioService
   ) { }
 
-  // ngOnInit(): void{
-  //   this.aceService.getProfile().subscribe((data)=>{
-  //     this.data = data
-  //   });
-  //}
 }

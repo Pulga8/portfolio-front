@@ -13,6 +13,7 @@ export class UpgradeExperienceComponent implements OnInit {
 
   form: FormGroup;
   formsend: Boolean = false;
+  notformsend: Boolean = false;
   id: number = 0;
   titulo: String = "";
   descripcion: String = "";
@@ -29,8 +30,8 @@ export class UpgradeExperienceComponent implements OnInit {
     private router: ActivatedRoute,
   ) {
     this.form = new FormGroup({
-      titulo: new FormControl(Validators.required, Validators.minLength(0)),
-      descripcion: new FormControl(Validators.required, Validators.minLength(0))
+      titulo: new FormControl('',[Validators.required, Validators.minLength(0), Validators.pattern("\(?!\\s).+")]),
+      descripcion: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")])
     });
   }
 
@@ -57,8 +58,13 @@ export class UpgradeExperienceComponent implements OnInit {
 
   onSent(event: Event) {
     event.preventDefault;
-    this.expeService.editExperiencia(this.id, this.form.value).subscribe();
-    this.formsend = true;
+    if(this.form.valid){
+      this.expeService.editExperiencia(this.id, this.form.value).subscribe();
+      this.formsend = true;
+    }else{
+      this.notformsend = true;
+      this.form.markAllAsTouched();
+    }
   }
 
   goToForm() {
