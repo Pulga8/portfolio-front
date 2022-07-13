@@ -23,7 +23,7 @@
     <div class="mb-3">
         <label for="progreso" class="form-label">Progreso</label>
         <input type="progreso" formControlName="progreso" class="form-control" id="progreso"
-            placeholder="Porcentaje del progreso"
+            placeholder="Porcentaje del progreso (inserte un número del 0 al 99)"
             [ngClass]="{'is-invalid': Progreso?.errors && Progreso?.touched, 'is-valid': !Progreso?.errors && Progreso?.touched}"
             class="form-control">
         <div *ngIf="Progreso?.errors && Progreso?.touched">

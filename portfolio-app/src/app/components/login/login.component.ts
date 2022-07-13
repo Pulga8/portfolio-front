@@ -10,13 +10,14 @@ import { UsersService } from 'src/app/services/usuario.service';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
+  notformsend: Boolean = false;
 
   constructor(
     private formBuilder: FormBuilder, private userService: UsersService, private route: Router) {
     this.form = this.formBuilder.group(
       {
-        username: ['', [Validators.required]],
-        password: ['', [Validators.required, Validators.minLength(4)]],
+        username: ['', [Validators.required, Validators.minLength(0), Validators.pattern("\(?!\\s).+")]],
+        password: ['', [Validators.required, Validators.minLength(4), Validators.pattern("\(?!\\s).+")]],
       }
     )
   }
@@ -36,11 +37,13 @@ export class LoginComponent implements OnInit {
   onSent(event: Event) {
     event.preventDefault;
     this.userService.login(this.form.value).subscribe(data => {
-      if (data == true) {
+      if (data == true && this.form.valid) {
         this.userService.setLogged(true);
         this.route.navigate(['/portfolio'])
       } else {
         this.route.navigate(['/login'])
+        this.form.markAllAsTouched();
+        this.notformsend = true;
       }
     })
   }

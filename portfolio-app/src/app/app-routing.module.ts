@@ -9,7 +9,6 @@ import { AbmProjectsComponent } from './components/forms/amb/abm-projects/abm-pr
 import { UpgradeProjectsComponent } from './components/forms/amb/abm-projects/upgrade-projects/upgrade-projects.component';
 import { AbmSkillsComponent } from './components/forms/amb/abm-skills/abm-skills.component';
 import { UpgradeSkillsComponent } from './components/forms/amb/abm-skills/upgrade-skills/upgrade-skills.component';
-import { FormAboutComponent } from './components/forms/form-about/form-about.component';
 import { FormEducationComponent } from './components/forms/form-educaction/form-education.component';
 import { FormExperienceComponent } from './components/forms/form-experience/form-experience.component';
 import { FormProjectsComponent } from './components/forms/form-projects/form-projects.component';
@@ -23,7 +22,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: PortfolioComponent },
   { path: 'form-education', component: FormEducationComponent },
-  { path: 'form-about', component: FormAboutComponent },
   { path: 'form-experience', component: FormExperienceComponent },
   { path: 'form-projects', component: FormProjectsComponent },
   { path: 'form-skills', component: FormSkillsComponent },

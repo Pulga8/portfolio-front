@@ -22,8 +22,8 @@ export class AbmSkillsComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group(
       {
-        titulo: ['', [Validators.required], Validators.minLength(0),Validators.pattern("\(?!\\s).+")],
-        progreso: ['', [Validators.required, Validators.maxLength(2), Validators.minLength(0),Validators.pattern("\(?!\\s).+")]],
+        titulo: ['', [Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")]],
+        progreso: ['', [Validators.required, Validators.maxLength(2), Validators.minLength(0),Validators.pattern("\(?!\\s).+"), Validators.pattern("\^[0-9]*$")]],
       }
     )
   }
