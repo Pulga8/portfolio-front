@@ -150,6 +150,8 @@ npm run server
 
 * Página para chequear [reguex](https://regex101.com/r/gC0xA6/31)
 
+* Página de [validaciones](https://code.tutsplus.com/es/tutorials/angular-form-validation-with-reactive-and-template-driven-forms--cms-32131)
+
 ## Fixme
 
 * Futuros:

@@ -66,11 +66,26 @@
         </div>
     </div>
     <div class="mb-3">
-        <label for="img_portada" class="form-label">Imagen de Perfil</label>
+        <label for="img_perfil" class="form-label">Imagen de Perfil</label>
+        <input
+            formControlName="img_perfil" 
+            class="form-control" 
+            placeholder="Agregue una imagen a su perfil" 
+            id="img_perfil"
+            [ngClass]="{'is-invalid': Img_perfil?.errors && Img_perfil?.touched, 'is-valid': !Img_perfil?.errors && Img_perfil?.touched}" 
+        >
+        <div *ngIf="Img_perfil?.errors && Img_perfil?.touched">
+            <p *ngIf="Img_perfil?.hasError('required')" class="text-danger">
+                La imagen es requerida.
+            </p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="img_portada" class="form-label">Imagen de Portada</label>
         <input
             formControlName="img_portada" 
             class="form-control" 
-            placeholder="Agregue una imagen a su perfil" 
+            placeholder="Agregue una imagen a su portada" 
             id="img_portada"
             [ngClass]="{'is-invalid': Img_portada?.errors && Img_portada?.touched, 'is-valid': !Img_portada?.errors && Img_portada?.touched}" 
         >
@@ -81,11 +96,12 @@
         </div>
     </div>
     <button type="submit" 
-    *ngIf="!(Nombre?.hasError('required') || Apellido?.hasError('required') || Profesion?.hasError('required') || About?.hasError('required') || Img_portada?.hasError('required')) 
+    *ngIf="!(Nombre?.hasError('required') || Apellido?.hasError('required') || Profesion?.hasError('required') || About?.hasError('required') || Img_perfil?.hasError('required') || Img_portada?.hasError('required')) 
         && (!Nombre?.errors && Nombre?.touched)
         && (!Apellido?.errors && Apellido?.touched)
         && (!Profesion?.errors && Profesion?.touched)
         && (!About?.errors && About?.touched)
+        && (!Img_perfil?.errors && Img_perfil?.touched)
         && (!Img_portada?.errors && Img_portada?.touched)"
         class="btn btn-primary">Enviar</button>
 </form>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { inject, waitForAsync } from '@angular/core/testing';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AboutComponent } from 'src/app/components/about/about.component';
 import { Persona } from 'src/app/model/Persona';
 import { PersonaService } from 'src/app/services/persona.service';
 
@@ -21,8 +22,9 @@ export class UpgradeAboutComponent implements OnInit {
   apellido: String = "";
   profesion: String = "";
   about: String = "";
+  img_perfil: String = "";
   img_portada: String = "";
-  persona: Persona = new Persona("", "", "", "", "");
+  persona: Persona = new Persona("", "", "", "", "", "");
 
 
   constructor(
@@ -31,11 +33,12 @@ export class UpgradeAboutComponent implements OnInit {
     private router: ActivatedRoute,
   ) {
     this.form = new FormGroup({
-      nombre: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")]),
-      apellido: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")]),
-      profesion: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")]),
-      about: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")]),
-      img_portada: new FormControl('',[Validators.required, Validators.minLength(0),Validators.pattern("\(?!\\s).+")])
+      nombre: new FormControl('', [Validators.required, Validators.minLength(0), Validators.pattern("\(?!\\s).+")]),
+      apellido: new FormControl('', [Validators.required, Validators.minLength(0), Validators.pattern("\(?!\\s).+")]),
+      profesion: new FormControl('', [Validators.required, Validators.minLength(0), Validators.pattern("\(?!\\s).+")]),
+      about: new FormControl('', [Validators.required, Validators.minLength(0), Validators.pattern("\(?!\\s).+")]),
+      img_perfil: new FormControl('', [Validators.required, Validators.minLength(0), Validators.pattern("\(?!\\s).+")]),
+      img_portada: new FormControl('', [Validators.required, Validators.minLength(0), Validators.pattern("\(?!\\s).+")])
     });
   }
 
@@ -63,6 +66,10 @@ export class UpgradeAboutComponent implements OnInit {
     return this.form.get('about');
   }
 
+  get Img_perfil() {
+    return this.form.get('img_perfil');
+  }
+
   get Img_portada() {
     return this.form.get('img_portada');
   }
@@ -72,14 +79,15 @@ export class UpgradeAboutComponent implements OnInit {
     this.form.patchValue({ apellido: this.persona.apellido });
     this.form.patchValue({ profesion: this.persona.profesion });
     this.form.patchValue({ about: this.persona.about });
+    this.form.patchValue({ img_perfil: this.persona.img_perfil });
     this.form.patchValue({ img_portada: this.persona.img_portada });
   }
   onSent(event: Event) {
     event.preventDefault;
-    if(this.form.valid){
+    if (this.form.valid) {
       this.peService.editPersona(this.id, this.form.value).subscribe();
       this.formsend = true;
-    }else{
+    } else {
       this.notformsend = true;
       this.form.markAllAsTouched();
     }

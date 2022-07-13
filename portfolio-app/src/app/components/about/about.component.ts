@@ -13,13 +13,13 @@ export class AboutComponent implements OnInit {
 
   persona: Persona[] = [];
   isLogged: Boolean = this.portfolioService.isLogged();
-  
+
   constructor(
     private personaServices: PersonaService,
-    private portfolioService: PortfolioService ,
+    private portfolioService: PortfolioService,
     private router: Router
 
-    ) { }
+  ) { }
 
   goToEdit(id: number | any) {
     this.router.navigate(['/upgrade-about', id])
