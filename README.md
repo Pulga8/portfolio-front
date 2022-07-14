@@ -140,17 +140,10 @@ npm run server
 
 * No pasar las entidades por las Url, utilizar método find by id.
 
-* Agregar cambio de portada y fotos a las listas de experiencias eduacion etc.
-
-* Evitar que se pueda agregar o guardar campos vacíos o con el String vacío.
+* Agregar  fotos a las listas de experiencias eduacion etc.
 
 * Añadir scrollspy [boostrapd](https://getbootstrap.com/docs/5.2/components/scrollspy/)
 
-* Validators.pattern("\(?!\\s).+")  con ésto podemos validar q no se ingresen campos con char vacío. 
-
-* Página para chequear [reguex](https://regex101.com/r/gC0xA6/31)
-
-* Página de [validaciones](https://code.tutsplus.com/es/tutorials/angular-form-validation-with-reactive-and-template-driven-forms--cms-32131)
 
 ## Fixme
 
@@ -175,6 +168,23 @@ El `subscribe()` de la línea:42 nos devuelve un futuro, osea es asíncrono, por
 
 Tendríamos un problema, y es que no se setearán con los valores que traiga el futuro, y ubicando el setValues(), dentro, tendremos una pequeña visión de los valores del objeto vacío en nuestro input, con un waitForAsync capaz se solucione, no sé usarlo.
 
+* Skills
+Animaciones de los skills, siempre muestran la misma cantidad.
+[Usar spinner de angular](https://v13.material.angular.io/components/progress-spinner/examples)
+
 ### Errors and Solutions
 
 * [dbname_hibernate_sequence_doesnt_exist](https://www.yawintutor.com/java-sql-sqlsyntaxerrorexception-table-dbname-hibernate_sequence-doesnt-exist/)
+
+
+## Bibliografía || Rercursos
+
+* Validators.pattern("\(?!\\s).+")  con ésto podemos validar q no se ingresen campos con char vacío. 
+
+* Página para chequear [reguex](https://regex101.com/r/gC0xA6/31)
+
+* Página de [validaciones](https://code.tutsplus.com/es/tutorials/angular-form-validation-with-reactive-and-template-driven-forms--cms-32131)
+
+* [Componentes de angular](https://v13.material.angular.io/components/categories)
+
+* [Componentes de Boostrap](https://getbootstrap.com/docs/5.2/components/accordion/ )
