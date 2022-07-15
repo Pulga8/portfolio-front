@@ -15,16 +15,16 @@
 </style>
 <div class="mb-5">
     <div class="logo">
-        <img class="rounded" height="514" src="{{persona[0].img_portada}}" alt="">
+        <img class="rounded" height="514" src="{{persona.img_portada}}" alt="">
     </div>
     <div class="container">
         <div class="row ">
-            <img class=" img-perfil rounded-circle" src="{{persona[0].img_perfil}}" alt="...">
+            <img class=" img-perfil rounded-circle" src="{{persona.img_perfil}}" alt="...">
         </div>
         <div class="row">
             <div class="columns d-flex align-items-center">
                 <div *ngIf="this.isLogged" class="column d-flex ms-auto">
-                    <button class="btn btn-outline-dark" (click)="goToEdit(persona[0].id)">
+                    <button class="btn btn-outline-dark" (click)="goToEdit(persona.id)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16">
                             <path
@@ -38,8 +38,8 @@
             <div class="col-sm-3">
                 <div class="card-w50">
                     <div class="card-body px-0">
-                        <h5 class="card-title">{{persona[0].nombre}}{{persona[0].apellido}}</h5>
-                        <p class="card-text">{{persona[0].profesion}}</p>
+                        <h5 class="card-title">{{persona.nombre}}{{persona.apellido}}</h5>
+                        <p class="card-text">{{persona.profesion}}</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                 <div class="card-w50">
                     <div class="card-body">
                         <h5 class="card-title">Acerca de mi</h5>
-                        <p class="card-text">{{persona[0].about}}</p>
+                        <p class="card-text">{{persona.about}}</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>

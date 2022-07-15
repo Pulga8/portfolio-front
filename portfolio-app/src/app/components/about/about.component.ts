@@ -11,7 +11,8 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class AboutComponent implements OnInit {
 
-  persona: Persona[] = [];
+  personas: Persona[] = [];
+  persona: Persona = new Persona("","","","","","");
   isLogged: Boolean = this.portfolioService.isLogged();
 
   constructor(
@@ -27,8 +28,13 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.personaServices.getPersona().subscribe((data) => {
-      this.persona = data;
+      this.personas = data;
+      this.setValues()
     })
+  }
+
+  setValues() {
+    this.persona = this.personas[0];
   }
 
 }
