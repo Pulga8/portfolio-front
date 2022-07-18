@@ -9,7 +9,7 @@ import { Usuario } from "../model/Usuario";
 export class UsersService {
   Logged: Boolean = false;
 
-  url = 'http://localhost:8080/usuario/auth';
+  url = 'https://ancient-atoll-13346.herokuapp.com/usuario/auth';
   constructor(private http: HttpClient) { }
 
   login(user: Usuario): Observable<any> {

@@ -1,0 +1,112 @@
+{
+    "/educacion/traer": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/educacion/crear": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/educacion/delete/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/educacion/modificar/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/experiencia/traer": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/experiencia/crear": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/experiencia/delete/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/experiencia/modificar/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/persona/traer": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/persona/traer/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/persona/crear": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/persona/delete/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/persona/modificar/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/proyecto/traer": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/proyecto/crear": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/proyecto/delete/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/proyecto/modificar/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/progreso/traer": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/progreso/crear": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/progreso/delete/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/progreso/modificar/{id}": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    },
+    "/usuario/auth": {
+        "target": "https://ancient-atoll-13346.herokuapp.com",
+        "secure": false,
+        "loglevel":"debug"
+    }
+}

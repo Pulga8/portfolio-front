@@ -8,7 +8,7 @@ import { Skill } from '../model/Skill';
 })
 export class SkillService {
   
-  URL = 'http://localhost:8080/progreso/';
+  URL = 'https://ancient-atoll-13346.herokuapp.com/progreso/';
 
   constructor(private http: HttpClient) { }
 
