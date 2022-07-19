@@ -47,6 +47,9 @@ export class LoginComponent implements OnInit {
       }
     })
   }
+  goToHome() {
+    this.route.navigate(['/portfolio'])
+  }
 
   logout() {
     this.userService.setLogged(false);

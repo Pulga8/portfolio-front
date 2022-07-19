@@ -1,34 +1,50 @@
-<h1 class="m-5"> LOGIN </h1>
-<form [formGroup]="form" class="m-5" (ngSubmit)="onSent($event)">
-      <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Username</label>
-            <input type="email" formControlName="username" 
-                  [ngClass]="{'is-invalid': Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}"
-                  class="form-control" id="exampleInputEmail1"
-                  aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
-            <div *ngIf="Username?.errors && Username?.touched">
-                  <p *ngIf="Username?.hasError('required')" class="text-danger">
-                        The username is required.
-                  </p>
-            </div>
-      </div>
-      <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" formControlName="password"
-                  [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
-                  class="form-control" id="exampleInputPassword1">
-            <div *ngIf="Password?.errors && Password?.touched">
-                  <p *ngIf="Password?.hasError('required')" class="text-danger">
-                        The Password is required.
-                  </p>
-            </div>
-      </div>
-      <button type="submit" class="btn btn-primary" 
-      [disabled]="(Password?.errors || Username?.errors)
-      || (!Password?.touched && !Username?.touched) 
-">Enviar</button>
-</form>
+<style>
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.title{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>
+<div class="container">
+
+	<form [formGroup]="form" class="m-5" (ngSubmit)="onSent($event)">
+		<h1 class="m-4 title"> LOGIN </h1>
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label">Username</label>
+			<input type="email" formControlName="username"
+				[ngClass]="{'is-invalid': Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}"
+				class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+			<div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
+			<div *ngIf="Username?.errors && Username?.touched">
+				<p *ngIf="Username?.hasError('required')" class="text-danger">
+					The username is required.
+				</p>
+			</div>
+		</div>
+		<div class="mb-3">
+			<label for="exampleInputPassword1" class="form-label">Password</label>
+			<input type="password" formControlName="password"
+				[ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
+				class="form-control" id="exampleInputPassword1">
+			<div *ngIf="Password?.errors && Password?.touched">
+				<p *ngIf="Password?.hasError('required')" class="text-danger">
+					The Password is required.
+				</p>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary" [disabled]="(Password?.errors || Username?.errors)
+      || (!Password?.touched && !Username?.touched)">Enviar
+		</button>
+		<button type="button" class="btn btn-link" (click)="goToHome()">
+			Cancelar
+		</button>
+	</form>
+</div>
 <div *ngIf="notformsend" class="alert alert-danger" role="alert">
-      Falló al iniciar la sesión.
-  </div>
+	Falló al iniciar la sesión.
+</div>
