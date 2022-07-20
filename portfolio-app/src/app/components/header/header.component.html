@@ -24,7 +24,7 @@
     </a>
     <div class="navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
-        <li class="nav-item col-6 col-md-auto">
+        <li class="nav-item col-md-auto">
           <a class="nav-link p-2" href="https://github.com/Pulga8" target="_blank" rel="noopener">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
               class="navbar-nav-svg d-inline-block align-text-top" viewBox="0 0 512 499.36" role="img">
@@ -36,7 +36,7 @@
             <small class="d-md-none ms-2">GitHub</small>
           </a>
         </li>
-        <li class="nav-item col-6 col-md-auto">
+        <li class="nav-item col-md-auto">
           <a class="nav-link p-2" href="https://twitter.com/" target="_blank" rel="noopener">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
               class="navbar-nav-svg d-inline-block align-text-top" viewBox="0 0 512 416.32" role="img">
@@ -48,7 +48,7 @@
             <small class="d-md-none ms-2">Twitter</small>
           </a>
         </li>
-        <li class="nav-item col-6 col-md-auto me-4">
+        <li class="nav-item col-md-auto me-4">
           <a class="nav-link p-2" href="https://linkedin.com/in/juan-y" target="_blank" rel="noopener">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
               class="navbar-nav-svg d-inline-block align-text-top" viewBox="0 0 448 512">
@@ -59,11 +59,13 @@
             <small class="d-md-none ms-2">Linkedin</small>
           </a>
         </li>
+        <li class="nav-item col-md-auto mt-2">
+          <button class="btn btn-outline-light" (click)="login()" *ngIf="!portfolioService.isLogged()" type="submit">Log
+            In</button>
+          <button class="btn btn-outline-light" (click)="logout()" *ngIf="portfolioService.isLogged()" type="submit">Log
+            Out</button>
+        </li>
       </ul>
-      <button class="btn btn-outline-light" (click)="login()" *ngIf="!portfolioService.isLogged()" type="submit">Log
-        In</button>
-      <button class="btn btn-outline-light" (click)="logout()" *ngIf="portfolioService.isLogged()" type="submit">Log
-        Out</button>
     </div>
   </div>
 </nav>
