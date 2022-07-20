@@ -2,13 +2,12 @@
     .botonera {
         display: flex;
         justify-content: space-between;
-
         width: 100%;
     }
 </style>
 <app-header></app-header>
-<table class="table">
-    <div class="botonera">
+<div class="container">
+    <div class="botonera mt-4 mb-4">
         <button type="button" class="btn btn-link" (click)="goToHome()">
             Volver
         </button>
@@ -16,20 +15,22 @@
             Agregar
         </button>
     </div>
-    <ol class="list-group " *ngFor="let proy of proyecto">
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                <h5>{{proy.titulo}}</h5>
-                {{proy.descripcion}}
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary" (click)="goToEdit(proy.id, proy)">
-                    Editar
-                </button>
-                <button type="button" class="btn btn-danger" (click)="goToDelete(proy.id)">
-                    Eliminar
-                </button>
-            </div>
-        </li>
-    </ol>
-</table>
+    <table class="table">
+        <ol class="list-group " *ngFor="let proy of proyecto">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <h5>{{proy.titulo}}</h5>
+                    {{proy.descripcion}}
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary me-4" (click)="goToEdit(proy.id, proy)">
+                        Editar
+                    </button>
+                    <button type="button" class="btn btn-danger me-4" (click)="goToDelete(proy.id)">
+                        Eliminar
+                    </button>
+                </div>
+            </li>
+        </ol>
+    </table>
+</div>

@@ -6,8 +6,8 @@
     }
 </style>
 <app-header></app-header>
-<table class="table">
-    <div class="botonera">
+<div class="container">
+    <div class="botonera mt-4 mb-4">
         <button type="button" class="btn btn-link" (click)="goToHome()">
             Volver
         </button>
@@ -15,20 +15,22 @@
             Agregar
         </button>
     </div>
-    <ol class="list-group " *ngFor="let ski of skill">
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                <h5>{{ski.titulo}}</h5>
-                {{ski.progreso}}
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary" (click)="goToEdit(ski.id, ski)">
-                    Editar
-                </button>
-                <button type="button" class="btn btn-danger" (click)="goToDelete(ski.id)">
-                    Eliminar
-                </button>
-            </div>
-        </li>
-    </ol>
-</table>
+    <table class="table">
+        <ol class="list-group " *ngFor="let ski of skill">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <h5>{{ski.titulo}}</h5>
+                    {{ski.progreso}}
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary me-4" (click)="goToEdit(ski.id, ski)">
+                        Editar
+                    </button>
+                    <button type="button" class="btn btn-danger me-4" (click)="goToDelete(ski.id)">
+                        Eliminar
+                    </button>
+                </div>
+            </li>
+        </ol>
+    </table>
+</div>
